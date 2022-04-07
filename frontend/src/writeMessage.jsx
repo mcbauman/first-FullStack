@@ -18,13 +18,28 @@ export default function WriteMessage(){
                 sub:sub.current.value,
                 content:msg.current.value
             })
+            from.current.value=""
+            to.current.value=""
+            sub.current.value=""
+            msg.current.value=""
         }else{alert("Please fill in valid data!")}
     }
 
     useEffect(()=>{
         if(message){
             console.log("send Server Request");
-            console.log(message);
+            const url="http://localhost:4040/messages"
+            const config={
+                method:"POST",
+                headers:{
+                    "Content-Type":"application/json",
+                },
+                body: JSON.stringify(message)
+            }
+            fetch(url,config)
+                .then(response=>response.json())
+                .then(result=>console.log(result))
+                .catch(error=>console.log(error))
         }
     },[message])
 
