@@ -1,0 +1,42 @@
+### GET users
+GET http://localhost:4040/users
+
+### POST users
+POST http://localhost:4040/users
+content-Type: application/json
+
+{
+    "firstname":"Torge",
+    "lastname":"Baumann",
+    "age":10,
+    "email":"tajb@cloud.com"
+}
+
+### GET messages
+GET http://localhost:4040/messages
+
+### Post Messages
+POST http://localhost:4040/Messages
+content-Type: application/json
+
+{
+    "from":"Matthias",
+    "to":"Cynthia",
+    "sub":"I Love You",
+    "content":"Babe the flight is booked for the 01.07.2022"
+}
+
+### DELETE users
+DELETE http://localhost:4040/users/624d90ef734eb6972d4efbf8
+
+### DELETE users
+DELETE http://localhost:4040/users/
+
+### DELETE messages
+DELETE http://localhost:4040/messages/624d8b58ef6284c66df849a1
+
+### DELETE messages
+DELETE http://localhost:4040/messages/
+
+### Error 404
+GET http://localhost:4040/invalid
